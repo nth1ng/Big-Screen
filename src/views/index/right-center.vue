@@ -6,7 +6,7 @@ import { ElMessage } from "element-plus";
 
 const config = ref({
   showValue: true,
-  unit: "次",
+  unit: "个",
 });
 const data = ref([]);
 const getData = () => {
@@ -31,13 +31,17 @@ getData();
 
 <template>
   <div class="right_bottom">
-    <CapsuleChart :config="config" style="width: 100%; height: 260px" :data="data" />
+    <CapsuleChart :config="config" style="width: 100%; height: 260px; margin: 0 auto;" :data="data" />
   </div>
 </template>
 
 <style scoped lang="scss">
 .right_bottom {
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 16px;
+  padding-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -75,7 +75,7 @@ const getGeojson = (regionCode: string) => {
   });
 };
 getData(code.value);
-
+//点击地图切换地市
 const mapClick = (params: any) => {
   // console.log(params);
   let xzqData = regionCodes[params.name];

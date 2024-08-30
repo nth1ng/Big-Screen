@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import ItemWrap from "@/components/item-wrap";
-import LeftTop from "./left-top.vue";
 import LeftCenter from "./left-center.vue";
 import LeftBottom from "./left-bottom.vue";
 import CenterMap from "./center-map.vue";
 import CenterBottom from "./center-bottom.vue";
-import RightTop from "./right-top.vue";
 import RightCenter from "./right-center.vue";
 import RightBottom from "./right-bottom.vue";
 </script>
@@ -17,38 +15,32 @@ import RightBottom from "./right-bottom.vue";
         <div class="item">实时监测</div>
         <div class="item">统计分析</div>
       </div> -->
-      <ItemWrap class="contetn_left-top contetn_lr-item" title="设备总览">
-        <LeftTop />
-      </ItemWrap>
-      <ItemWrap class="contetn_left-center contetn_lr-item" title="用户总览">
+      <ItemWrap class="contetn_left-center contetn_lr-item" title="全国光伏发电装机容量">
         <LeftCenter />
       </ItemWrap>
       <ItemWrap
         class="contetn_left-bottom contetn_lr-item"
-        title="设备提醒"
+        title="光伏发电装机情况"
         style="padding: 0 10px 16px 10px"
       >
         <LeftBottom />
       </ItemWrap>
     </div>
     <div class="contetn_center">
-      <CenterMap class="contetn_center_top" title="设备分布图" />
-      <ItemWrap class="contetn_center-bottom" title="安装计划">
+      <CenterMap class="contetn_center_top" title="光伏预测数据分布图" />
+      <ItemWrap class="contetn_center-bottom" title="光伏发电装机统计图">
         <CenterBottom />
       </ItemWrap>
     </div>
     <div class="contetn_right">
-      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="报警次数">
-        <RightTop />
-      </ItemWrap>
       <ItemWrap
         class="contetn_left-bottom contetn_lr-item"
-        title="报警排名(TOP8)"
+        title="光伏装机排名"
         style="padding: 0 10px 16px 10px"
       >
         <RightCenter />
       </ItemWrap>
-      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="数据统计图 ">
+      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="右下角 ">
         <RightBottom />
       </ItemWrap>
     </div>
@@ -85,6 +77,7 @@ import RightBottom from "./right-bottom.vue";
 }
 
 .contetn_lr-item {
-  height: 310px;
+  height: 450px;
+  margin: 10px 0;
 }
 </style>

@@ -229,4 +229,9 @@ onMounted(() => {
   <v-chart class="chart" :option="option" v-if="JSON.stringify(option) != '{}'" />
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.chart {
+  width: 100%;
+  height: calc(100% - 10px);
+}
+</style>

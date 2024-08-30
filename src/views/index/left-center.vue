@@ -4,7 +4,7 @@ import { graphic } from "echarts/core";
 import { countUserNum } from "@/api";
 import {ElMessage} from "element-plus"
 
-let colors = ["#0BFC7F", "#A0A0A0", "#F48C02", "#F4023C"];
+let colors = ["#0BFC7F", "#A0A0A0", "#F48C02", "#F4023C", "#8A2BE2"]; // 添加新颜色
 const option = ref({});
 const state = reactive({
   lockNum: 0,
@@ -12,6 +12,7 @@ const state = reactive({
   onlineNum: 0,
   alarmNum: 0,
   totalNum: 0,
+  newDataNum: 0, // 添加新的数据字段
 });
 const echartsGraphic = (colors: string[]) => {
   return new graphic.LinearGradient(1, 0, 0, 0, [
@@ -28,6 +29,7 @@ const getData = () => {
       state.onlineNum = res.data.onlineNum;
       state.totalNum = res.data.totalNum;
       state.alarmNum = res.data.alarmNum;
+      state.newDataNum = res.data.newDataNum; // 获取新数据
       setOption();
     }else{
       ElMessage.error(res.msg)
@@ -117,30 +119,37 @@ const setOption = () => {
         data: [
           {
             value: state.onlineNum,
-            name: "在线",
+            name: "水力发电",
             itemStyle: {
               color: echartsGraphic(["#0BFC7F", "#A3FDE0"]),
             },
           },
           {
             value: state.offlineNum,
-            name: "离线",
+            name: "火力发电",
             itemStyle: {
               color: echartsGraphic(["#A0A0A0", "#DBDFDD"]),
             },
           },
           {
             value: state.lockNum,
-            name: "锁定",
+            name: "光伏发电",
             itemStyle: {
               color: echartsGraphic(["#F48C02", "#FDDB7D"]),
             },
           },
           {
             value: state.alarmNum,
-            name: "异常",
+            name: "风力发电",
             itemStyle: {
               color: echartsGraphic(["#F4023C", "#FB6CB7"]),
+            },
+          },
+          {
+            value: state.newDataNum,
+            name: "新能源发电", // 新数据项名称
+            itemStyle: {
+              color: echartsGraphic(["#8A2BE2", "#D8BFD8"]), // 新颜色渐变
             },
           },
         ],

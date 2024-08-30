@@ -49,7 +49,7 @@ const setOption = async (newData: any) => {
       },
     },
     legend: {
-      data: ["已安装", "计划安装", "安装率"],
+      data: ["集中式", "分布式", "安装率"],
       textStyle: {
         color: "#B4B4B4",
       },
@@ -99,7 +99,7 @@ const setOption = async (newData: any) => {
     ],
     series: [
       {
-        name: "已安装",
+        name: "分布式",
         type: "bar",
         barWidth: 10,
         itemStyle: {
@@ -112,7 +112,7 @@ const setOption = async (newData: any) => {
         data: newData.barData,
       },
       {
-        name: "计划安装",
+        name: "集中式",
         type: "bar",
         barGap: "-100%",
         barWidth: 10,

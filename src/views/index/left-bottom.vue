@@ -78,7 +78,7 @@ onMounted(() => {
             <div class="dibu"></div>
             <div class="flex">
               <div class="info">
-                <span class="labels">设备ID：</span>
+                <span class="labels">名称：</span>
                 <span class="text-content zhuyao doudong wangguan"> {{ item.gatewayno }}</span>
               </div>
               <div class="info">

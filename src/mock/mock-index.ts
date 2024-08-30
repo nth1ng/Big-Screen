@@ -34,6 +34,7 @@ export default [
                     offlineNum: '@integer(50, 100)',
                     alarmNum: '@integer(20, 100)',
                     lockNum: '@integer(10, 50)',
+                    newDataNum: '@integer(30, 80)',
                     totalNum: 368
                 }
             })
