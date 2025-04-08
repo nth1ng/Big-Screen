@@ -4,6 +4,11 @@ import dayjs from 'dayjs';
 import type {DateDataType} from "./index.d"
 import {useSettingStore} from "@/stores/index"
 
+const props = defineProps<{
+  title?: string
+}>()
+
+
 const dateData = reactive<DateDataType>({
   dateDay: "",
   dateYear: "",
@@ -29,7 +34,7 @@ timeFn()
     <div class="guang"></div>
     <div class="d-flex jc-center">
       <div class="title">
-        <span class="title-text">光伏预测可视化平台</span>
+        <span class="title-text">{{ title || '光伏预测可视化平台' }}</span>
       </div>
     </div>
     <div class="timers">

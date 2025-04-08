@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
+  {
+    path: '/forecast',
+    name: 'forecast',
+    component: () => import('@/views/forecast/forecast.vue')
+  },
 ]
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),

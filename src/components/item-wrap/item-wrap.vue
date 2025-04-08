@@ -35,11 +35,12 @@ $item_title_content-height: calc(100% - 38px);
   width: 100%;
   color: #31abe3;
   text-align: center;
-  // background: linear-gradient(to right, transparent, #0f0756, transparent);
+  background: linear-gradient(to right, transparent, #0f0756, transparent);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 12px;
 
   .zuo,
   .you {

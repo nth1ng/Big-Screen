@@ -40,7 +40,7 @@ import RightBottom from "./right-bottom.vue";
       >
         <RightCenter />
       </ItemWrap>
-      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="右下角 ">
+      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="2024年度各地太阳能发电量排名">
         <RightBottom />
       </ItemWrap>
     </div>

@@ -87,15 +87,6 @@ onMounted(() => {
               </div>
             </div>
 
-            <span
-              class="types doudong"
-              :class="{
-                typeRed: item.onlineState == 0,
-                typeGreen: item.onlineState == 1,
-              }"
-              >{{ item.onlineState == 1 ? "上线" : "下线" }}</span
-            >
-
             <div class="info addresswrap">
               <span class="labels">地址：</span>
               <span class="text-content ciyao" style="font-size: 12px"> {{ addressHandle(item) }}</span>

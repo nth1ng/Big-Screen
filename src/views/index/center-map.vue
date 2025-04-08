@@ -5,11 +5,13 @@ import { registerMap, getMap } from "echarts/core";
 import { optionHandle, regionCodes } from "./center.map";
 import BorderBox13 from "@/components/datav/border-box-13";
 import { ElMessage } from "element-plus";
+import { useRouter } from "vue-router";
 
 import type { MapdataType } from "./center.map";
 
 const option = ref({});
 const code = ref("china"); //china 代表中国 其他地市是行政编码
+const router = useRouter();
 
 withDefaults(
   defineProps<{
@@ -75,14 +77,13 @@ const getGeojson = (regionCode: string) => {
   });
 };
 getData(code.value);
-//点击地图切换地市
+//点击地图跳转到forecast页面
 const mapClick = (params: any) => {
-  // console.log(params);
   let xzqData = regionCodes[params.name];
   if (xzqData) {
-    getData(xzqData.adcode);
+    router.push('/forecast');
   } else {
-    window["$message"].warning("暂无下级地市");
+    window["$message"].warning("暂无该省份数据");
   }
 };
 </script>
