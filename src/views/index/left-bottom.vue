@@ -38,12 +38,6 @@ const getData = () => {
 };
 const addressHandle = (item: any) => {
   let name = item.provinceName;
-  if (item.cityName) {
-    name += "/" + item.cityName;
-    if (item.countyName) {
-      name += "/" + item.countyName;
-    }
-  }
   return name;
 };
 const comName = computed(() => {

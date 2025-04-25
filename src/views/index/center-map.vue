@@ -8,19 +8,20 @@ import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 
 import type { MapdataType } from "./center.map";
+import forecast from "@/views/forecast/forecast.vue";
 
 const option = ref({});
-const code = ref("china"); //china 代表中国 其他地市是行政编码
+const code = ref("china");
 const router = useRouter();
 
 withDefaults(
-  defineProps<{
-    // 结束数值
-    title: number | string;
-  }>(),
-  {
-    title: "地图",
-  }
+    defineProps<{
+      // 结束数值
+      title: number | string;
+    }>(),
+    {
+      title: "地图",
+    }
 );
 
 const dataSetHandle = async (regionCode: string, list: object[]) => {
@@ -31,7 +32,7 @@ const dataSetHandle = async (regionCode: string, list: object[]) => {
   geojson.features.forEach((element: any) => {
     cityCenter[element.properties.name] = element.properties.centroid || element.properties.center;
   });
-  //当前中心点如果有此条数据中心点则赋值x，y当然这个x,y也可以后端返回进行大点，前端省去多行代码
+  //当前中心点如果有此条数据中心点则赋值x，y
   list.forEach((item: any) => {
     if (cityCenter[item.name]) {
       mapData.push({
@@ -47,17 +48,17 @@ const dataSetHandle = async (regionCode: string, list: object[]) => {
 
 const getData = async (regionCode: string) => {
   centerMap({ regionCode: regionCode })
-    .then((res) => {
-      console.log("中上--设备分布", res);
-      if (res.success) {
-        dataSetHandle(res.data.regionCode, res.data.dataList);
-      } else {
-        ElMessage.error(res.msg);
-      }
-    })
-    .catch((err) => {
-      ElMessage.error(err);
-    });
+      .then((res) => {
+        console.log("中上--设备分布", res);
+        if (res.success) {
+          dataSetHandle(res.data.regionCode, res.data.dataList);
+        } else {
+          ElMessage.error(res.msg);
+        }
+      })
+      .catch((err) => {
+        ElMessage.error(err);
+      });
 };
 const getGeojson = (regionCode: string) => {
   return new Promise<boolean>(async (resolve) => {
@@ -79,9 +80,12 @@ const getGeojson = (regionCode: string) => {
 getData(code.value);
 //点击地图跳转到forecast页面
 const mapClick = (params: any) => {
-  let xzqData = regionCodes[params.name];
+  const xzqData = regionCodes[params.name].adcode;
+  console.log('params:', params);
+  console.log('xzqData:', xzqData);
+  console.log('typeof xzqData:', typeof xzqData);
   if (xzqData) {
-    router.push('/forecast');
+    router.push({ path: '/forecast', query: { regionCode: xzqData } });
   } else {
     window["$message"].warning("暂无该省份数据");
   }
@@ -99,11 +103,11 @@ const mapClick = (params: any) => {
       <BorderBox13>
         <div class="quanguo" @click="getData('china')" v-if="code !== 'china'">中国</div>
         <v-chart
-          class="chart"
-          :option="option"
-          ref="centerMapRef"
-          @click="mapClick"
-          v-if="JSON.stringify(option) != '{}'"
+            class="chart"
+            :option="option"
+            ref="centerMapRef"
+            @click="mapClick"
+            v-if="JSON.stringify(option) != '{}'"
         />
       </BorderBox13>
     </div>
@@ -170,6 +174,20 @@ const mapClick = (params: any) => {
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0, 237, 237, 0.5), 0 0 6px rgba(0, 237, 237, 0.4);
       z-index: 10;
+    }
+
+    html, body {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* 防止出现滚动条 */
+    }
+
+    /* 让页面容器占满整个视口 */
+    #app {
+      height: 100vh;
+      width: 100vw;
     }
   }
 }

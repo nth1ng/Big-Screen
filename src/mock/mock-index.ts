@@ -71,7 +71,7 @@ export default [
                             provinceName: "@province()",
                             cityName: '@city()',
                             countyName: "@county()",
-                            createTime: "@datetime('yyyy-MM-dd HH:mm:ss')",
+                            createTime: "@date('yyyy-MM-dd HH:mm:ss', '2024-01-01 00：00：00', '2024-12-31 24：00：00')",
                             deviceId: "6c512d754bbcd6d7cd86abce0e0cac58",
                             "gatewayno|+1": 10000,
                             "onlineState|1": [0, 1],
