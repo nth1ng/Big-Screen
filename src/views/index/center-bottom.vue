@@ -8,7 +8,7 @@ const option = ref({});
 const getData = () => {
   installationPlan()
     .then((res) => {
-      console.log("中下--安装计划", res);
+      console.log("中下", res);
       if (res.success) {
         setOption(res.data);
       } else {
@@ -49,7 +49,7 @@ const setOption = async (newData: any) => {
       },
     },
     legend: {
-      data: ["集中式", "分布式", "安装率"],
+      data: ["集中式", "分布式"],
       textStyle: {
         color: "#B4B4B4",
       },

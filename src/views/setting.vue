@@ -59,33 +59,6 @@ const indexRadioChange=(flag: boolean)=>{
           </el-radio-group>
         </div>
       </div>
-      <div class="left_shu">实时监测</div>
-      <div class="setting_item">
-        <span class="setting_label">
-          设备提醒自动轮询: <span class="setting_label_tip"></span>
-        </span>
-        <div class="setting_content">
-          <el-radio-group
-            v-model="leftBottomRadio"
-            @change="(flag)=>indexRadioChange(flag as boolean)"
-          >
-            <el-radio :label="true">是</el-radio>
-            <el-radio :label="false">否</el-radio>
-          </el-radio-group>
-        </div>
-      </div>
-      <div class="setting_item">
-        <span class="setting_label"> 实时预警轮播: </span>
-        <div class="setting_content">
-          <el-radio-group
-            v-model="rightBottomRadio"
-            @change="(flag)=>indexRadioChange(flag as boolean)"
-          >
-            <el-radio :label="true">是</el-radio>
-            <el-radio :label="false">否</el-radio>
-          </el-radio-group>
-        </div>
-      </div>
     </template>
     <!-- <template #footer>
       <div style="flex: auto">

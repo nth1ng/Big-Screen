@@ -151,21 +151,37 @@ export default [
              */
             // 创建固定的省份发电量数据列表
             const provinceData = [
-                { provinceName: "新疆", alertvalue: 380 },
+                {provinceName: "新疆", alertvalue: 380},
                 { provinceName: "内蒙古", alertvalue: 310 },
-                { provinceName: "河北", alertvalue: 303 },
-                { provinceName: "青海", alertvalue: 287 },
-                { provinceName: "云南", alertvalue: 281 },
+                { provinceName: "河北省", alertvalue: 303 },
+                { provinceName: "青海省", alertvalue: 287 },
+                { provinceName: "云南省", alertvalue: 281 },
                 { provinceName: "宁夏", alertvalue: 278 },
-                { provinceName: "甘肃", alertvalue: 239 },
-                { provinceName: "山东", alertvalue: 212 },
-                { provinceName: "山西", alertvalue: 191 },
-                { provinceName: "湖北", alertvalue: 180 },
-                { provinceName: "浙江", alertvalue: 160 },
-                { provinceName: "贵州", alertvalue: 147 },
-                { provinceName: "江苏", alertvalue: 145 },
-                { provinceName: "广东", alertvalue: 140 },
-                { provinceName: "陕西", alertvalue: 134 }
+                { provinceName: "甘肃省", alertvalue: 239 },
+                { provinceName: "山东省", alertvalue: 212 },
+                { provinceName: "山西省", alertvalue: 191 },
+                { provinceName: "湖北省", alertvalue: 180 },
+                { provinceName: "浙江省", alertvalue: 160 },
+                { provinceName: "贵州省", alertvalue: 147 },
+                { provinceName: "江苏省", alertvalue: 145 },
+                { provinceName: "广东省", alertvalue: 140 },
+                { provinceName: "陕西省", alertvalue: 134 },
+                { provinceName: "安徽省", alertvalue: 134 },
+                { provinceName: "广西", alertvalue: 91 },
+                { provinceName: "江西省", alertvalue: 91 },
+                { provinceName: "四川省", alertvalue: 81 },
+                { provinceName: "河南省", alertvalue: 68 },
+                { provinceName: "黑龙江省", alertvalue: 62 },
+                { provinceName: "辽宁省", alertvalue: 57 },
+                { provinceName: "湖南省", alertvalue: 48 },
+                { provinceName: "吉林省", alertvalue: 44 },
+                { provinceName: "天津市", alertvalue: 41 },
+                { provinceName: "海南省", alertvalue: 36 },
+                { provinceName: "西藏", alertvalue: 11 },
+                { provinceName: "福建省", alertvalue: 10 },
+                { provinceName: "上海市", alertvalue: 8 },
+                { provinceName: "重庆市", alertvalue: 6 },
+                { provinceName: "北京市", alertvalue: 1 }
             ];
             
             return {
@@ -205,7 +221,7 @@ export default [
                 156,32,393,0,398,86,30,366,704,
                 540,1083,437,2659,149,478,
                 281,159,315,1495];
-            const rateData = [];
+            
             
             
             
@@ -215,7 +231,7 @@ export default [
                     category: category,
                     barData: barData,
                     lineData: lineData,
-                    rateData: rateData
+                    
                 }
             }
         }
