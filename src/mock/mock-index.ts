@@ -31,11 +31,12 @@ export default [
             const a = {
                 success: true,
                 data: {
-                    offlineNum: 75,
-                    alarmNum: 60,
-                    lockNum: 30,
-                    newDataNum: 50,
-                    totalNum: 368
+                    onlineNum: 14256,
+                    offlineNum: 63742,
+                    alarmNum: 9970,
+                    lockNum: 8390,
+                    newDataNum: 4508,
+                    totalNum: 100868
                 }
             }
             return a
@@ -136,39 +137,38 @@ export default [
         }
     },
     //右下
-    {
+       //右下
+       {
         url: "/bigscreen/rightBottom",
         type: "get",
         response: () => {
-            // 创建固定的告警数据列表
-            const alertList = [];
-            const alertNames = ["水浸告警", "各种报警"];
-            const provinces = ["北京市", "上海市", "广东省", "浙江省", "江苏省", "四川省", "湖北省", "福建省"];
-            const cities = ["北京市", "上海市", "广州市", "杭州市", "南京市", "成都市", "武汉市", "厦门市"];
-            const counties = ["东城区", "黄浦区", "天河区", "西湖区", "鼓楼区", "武侯区", "江汉区", "思明区"];
-            
-            for (let i = 0; i < 40; i++) {
-                const provinceIndex = i % 8;
-                alertList.push({
-                    alertdetail: "告警详情" + (i + 1),
-                    alertname: alertNames[i % 2],
-                    alertvalue: 60 + i * 3.5,
-                    createtime: "2022-04-19 08:38:33",
-                    deviceid: null,
-                    gatewayno: 10000 + i,
-                    phase: "A1",
-                    sbInfo: "设备信息描述" + (i + 1),
-                    terminalno: 100 + i,
-                    provinceName: provinces[provinceIndex],
-                    cityName: cities[provinceIndex],
-                    countyName: counties[provinceIndex]
-                });
-            }
+            /**
+             * @description: 提供右下角省份发电量数据
+             * @return {Object} 包含省份名称和对应发电量值的数据列表
+             */
+            // 创建固定的省份发电量数据列表
+            const provinceData = [
+                { provinceName: "新疆", alertvalue: 380 },
+                { provinceName: "内蒙古", alertvalue: 310 },
+                { provinceName: "河北", alertvalue: 303 },
+                { provinceName: "青海", alertvalue: 287 },
+                { provinceName: "云南", alertvalue: 281 },
+                { provinceName: "宁夏", alertvalue: 278 },
+                { provinceName: "甘肃", alertvalue: 239 },
+                { provinceName: "山东", alertvalue: 212 },
+                { provinceName: "山西", alertvalue: 191 },
+                { provinceName: "湖北", alertvalue: 180 },
+                { provinceName: "浙江", alertvalue: 160 },
+                { provinceName: "贵州", alertvalue: 147 },
+                { provinceName: "江苏", alertvalue: 145 },
+                { provinceName: "广东", alertvalue: 140 },
+                { provinceName: "陕西", alertvalue: 134 }
+            ];
             
             return {
                 success: true,
                 data: {
-                    list: alertList
+                    list: provinceData
                 }
             }
         }
@@ -243,32 +243,52 @@ export default [
                         regionCode: params.regionCode
                     }
                 }
-            } else {
-                // 固定的省份数据
-                const provinceData = [
-                    { name: "北京市", value: 980 },
-                    { name: "上海市", value: 870 },
-                    { name: "广东省", value: 1050 },
-                    { name: "浙江省", value: 920 },
-                    { name: "江苏省", value: 890 },
-                    { name: "四川省", value: 760 },
-                    { name: "湖北省", value: 680 },
-                    { name: "福建省", value: 630 },
-                    { name: "山东省", value: 850 },
-                    { name: "河南省", value: 720 },
-                    { name: "辽宁省", value: 580 },
-                    { name: "陕西省", value: 540 }
-                ];
+           // ... existing code ...
+        } else {
+            // 固定的省份数据 (根据图片修正)
+            const provinceData = [
+                { name: "内蒙古自治区", value: 8179 },
+                { name: "广东省", value: 6955 },
+                { name: "江苏省", value: 6330 },
+                { name: "山东省", value: 6055 },
+                { name: "新疆维吾尔自治区", value: 5313 }, 
+                { name: "四川省", value: 5053 },
+                { name: "浙江省", value: 4645 },
+                { name: "山西省", value: 4386 },
+                { name: "云南省", value: 4362 },
+                { name: "河北省", value: 3881 },
+                { name: "安徽省", value: 3524 },
+                { name: "河南省", value: 3388 }, 
+                { name: "福建省", value: 3270 },
+                { name: "湖北省", value: 3259 },
+                { name: "陕西省", value: 3173 },
+                { name: "贵州省", value: 2440 },
+                { name: "广西壮族自治区", value: 2439 },
+                { name: "宁夏回族自治区", value: 2290 }, 
+                { name: "辽宁省", value: 2203 },
+                { name: "甘肃省", value: 2075 },
+                { name: "湖南省", value: 1758 },
+                { name: "江西省", value: 1717 },
+                { name: "黑龙江省", value: 1285 },
+                { name: "重庆市", value: 1149 },
+                { name: "吉林省", value: 1109 },
+                { name: "青海省", value: 1035 },
+                { name: "上海市", value: 1017 },
+                { name: "天津市", value: 833 },
+                { name: "海南省", value: 468 },
+                { name: "北京市", value: 432 },
+                { name: "西藏自治区", value: 144 }
                 
-                return {
-                    success: true,
-                    data: {
-                        dataList: provinceData,
-                        regionCode: 'china'
-                    }
+            ];
+
+            return {
+                success: true,
+                data: {
+                    dataList: provinceData,
+                    regionCode: 'china'
                 }
             }
         }
     }
+}
 ];
-

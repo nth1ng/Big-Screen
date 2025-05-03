@@ -44,7 +44,7 @@ const setOption = () => {
     title: {
       top: "center",
       left: "center",
-      text: [`{value|${state.totalNum}}`, "{name|总数}"].join("\n"),
+      text: [`{value|${state.totalNum}}`, "{name|总发电量}"].join("\n"),
       textStyle: {
         rich: {
           value: {
@@ -71,7 +71,7 @@ const setOption = () => {
     },
     series: [
       {
-        name: "用户总览",
+        name: "",
         type: "pie",
         radius: ["40%", "70%"],
         // avoidLabelOverlap: false,
@@ -83,7 +83,7 @@ const setOption = () => {
         color: colors,
         label: {
           show: true,
-          formatter: "   {b|{b}}   \n   {c|{c}亿千瓦时}   {per|{d}%}  ",
+          formatter: "   {b|{b}}   \n   {c|{c}亿}   {per|{d}%}  ",
           //   position: "outside",
           rich: {
             b: {
@@ -147,9 +147,9 @@ const setOption = () => {
           },
           {
             value: state.newDataNum,
-            name: "新能源发电", // 新数据项名称
+            name: "核动力发电", 
             itemStyle: {
-              color: echartsGraphic(["#8A2BE2", "#D8BFD8"]), // 新颜色渐变
+              color: echartsGraphic(["#8A2BE2", "#D8BFD8"]), 
             },
           },
         ],
