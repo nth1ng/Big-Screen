@@ -15,7 +15,7 @@ import RightBottom from "./right-bottom.vue";
         <div class="item">实时监测</div>
         <div class="item">统计分析</div>
       </div> -->
-      <ItemWrap class="contetn_left-center contetn_lr-item" title="全国光伏发电装机容量">
+      <ItemWrap class="contetn_left-center contetn_lr-item" title="全国发电装机容量">
         <LeftCenter />
       </ItemWrap>
       <ItemWrap
@@ -27,7 +27,7 @@ import RightBottom from "./right-bottom.vue";
       </ItemWrap>
     </div>
     <div class="contetn_center">
-      <CenterMap class="contetn_center_top" title="光伏发电数据分布图" />
+      <CenterMap class="contetn_center_top" title="全国总发电量数据分布图" />
       <ItemWrap class="contetn_center-bottom" title="光伏发电装机类型统计图">
         <CenterBottom />
       </ItemWrap>
