@@ -83,7 +83,7 @@ const setOption = () => {
         color: colors,
         label: {
           show: true,
-          formatter: "   {b|{b}}   \n   {c|{c}个}   {per|{d}%}  ",
+          formatter: "   {b|{b}}   \n   {c|{c}亿千瓦时}   {per|{d}%}  ",
           //   position: "outside",
           rich: {
             b: {

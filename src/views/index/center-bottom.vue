@@ -39,7 +39,7 @@ const setOption = async (newData: any) => {
             if (item.seriesName == "安装率") {
               result += item.marker + " " + item.seriesName + " : " + item.value + "%</br>";
             } else {
-              result += item.marker + " " + item.seriesName + " : " + item.value + "个</br>";
+              result += item.marker + " " + item.seriesName + " : " + item.value + "亿千瓦时</br>";
             }
           } else {
             result += item.marker + " " + item.seriesName + " :  - </br>";

@@ -23,12 +23,12 @@ export const optionHandle = (regionCode: string,
             left: 20,
             bottom: 20,
             pieces: [
-                { gte: 1000, label: "1000个以上" }, // 不指定 max，表示 max 为无限大（Infinity）。
-                { gte: 600, lte: 999, label: "600-999个" },
-                { gte: 200, lte: 599, label: "200-599个" },
-                { gte: 50, lte: 199, label: "49-199个" },
-                { gte: 10, lte: 49, label: "10-49个" },
-                { lte: 9, label: "1-9个" }, // 不指定 min，表示 min 为无限大（-Infinity）。
+                { gte: 1000, label: "1000亿千瓦时以上" }, // 不指定 max，表示 max 为无限大（Infinity）。
+                { gte: 600, lte: 999, label: "600-999亿千瓦时" },
+                { gte: 200, lte: 599, label: "200-599亿千瓦时" },
+                { gte: 50, lte: 199, label: "49-199亿千瓦时" },
+                { gte: 10, lte: 49, label: "10-49亿千瓦时" },
+                { lte: 9, label: "1-9亿千瓦时" }, // 不指定 min，表示 min 为无限大（-Infinity）。
             ],
             inRange: {
                 // 渐变颜色，从小到大
