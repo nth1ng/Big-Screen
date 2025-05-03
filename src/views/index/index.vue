@@ -27,15 +27,15 @@ import RightBottom from "./right-bottom.vue";
       </ItemWrap>
     </div>
     <div class="contetn_center">
-      <CenterMap class="contetn_center_top" title="光伏发电数据分布图" />
-      <ItemWrap class="contetn_center-bottom" title="光伏发电装机类型统计图">
+      <CenterMap class="contetn_center_top" title="全国发电量数据分布图" />
+      <ItemWrap class="contetn_center-bottom" title="2024年光伏发电建设情况统计图">
         <CenterBottom />
       </ItemWrap>
     </div>
     <div class="contetn_right">
       <ItemWrap
           class="contetn_left-bottom contetn_lr-item"
-          title="各省、市、区光伏发电量统计"
+          title="2024年各地累计光伏装机排名"
           style="padding: 0 10px 16px 10px"
       >
         <RightCenter />

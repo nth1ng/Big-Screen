@@ -115,14 +115,17 @@ export default [
         response: () => {
             // 使用固定的城市和数值
             const fixedData = [
-                { value: 980, name: "上海市" },
-                { value: 850, name: "北京市" },
-                { value: 720, name: "广州市" },
-                { value: 650, name: "深圳市" },
-                { value: 580, name: "杭州市" },
-                { value: 450, name: "成都市" },
-                { value: 380, name: "武汉市" },
-                { value: 320, name: "南京市" }
+                { value: 7613, name: "山东" }, { value: 7202, name: "河北" }, { value: 6164, name: "江苏" }, 
+                { value: 5345, name: "新疆" }, { value: 4810, name: "内蒙古" }, { value: 4727, name: "浙江" }, 
+                { value: 4349, name: "河南" }, { value: 4311, name: "安徽" }, { value: 4115, name: "广东" }, 
+                { value: 3723, name: "云南" }, { value: 3642, name: "青海" }, { value: 3510, name: "湖北" },
+                 { value: 3476, name: "山西" }, { value: 3433, name: "陕西" }, { value: 3138, name: "甘肃" },
+                  { value: 2624, name: "宁夏" }, { value: 2563, name: "江西" }, { value: 2052, name: "广西" },
+                   { value: 1985, name: "贵州" }, { value: 1873, name: "湖南" }, { value: 1258, name: "福建" },
+                    { value: 1213, name: "辽宁" }, { value: 1082, name: "四川" }, { value: 740, name: "海南" }, 
+                    { value: 724, name: "天津" }, { value: 717, name: "黑龙江" }, { value: 583, name: "吉林" },
+                     { value: 411, name: "上海" }, { value: 403, name: "西藏" }, { value: 309, name: "重庆" }, 
+                     { value: 130, name: "北京" } 
             ];
             
             // 按照数值从大到小排序
@@ -180,28 +183,31 @@ export default [
         response: () => {
             // 使用固定的城市列表
             const category = [
-                "北京市", "上海市", "广州市", "深圳市", "杭州市", "南京市", "成都市", "武汉市", 
-                "西安市", "重庆市", "天津市", "苏州市", "厦门市", "青岛市", "长沙市", "郑州市", 
-                "大连市", "宁波市", "济南市", "哈尔滨市", "沈阳市", "太原市", "合肥市", "福州市", 
-                "南昌市", "贵阳市", "昆明市", "南宁市", "石家庄市", "兰州市"
+               "北京", "天津", "河北", "山西", 
+                "山东", "内蒙古", "辽宁", "吉林",
+                "黑龙江", "上海", "江苏", "浙江", "安徽", "福建", "江西",
+                 "河南", "湖北", "湖南",  
+                "重庆", "四川", "陕西", "甘肃", 
+                "青海", "宁夏", "新疆" , "西藏", "广东", "广西"
+                ,"海南", "贵州", "云南"
             ];
             
             // 使用固定的数据
             const barData = [
-                65, 42, 78, 53, 89, 36, 72, 48, 95, 61, 83, 39, 57, 74, 45, 68, 
-                91, 52, 77, 43, 86, 59, 81, 37, 64, 93, 50, 75, 46, 88
+                18,182,515,309,921,
+                134,235,81,77,122,1797,1204,932,
+                351,177,617,624,534,122,142,437,
+                80,18,49,8,9,1115,638,108,93,156
             ];
             
             // 计算固定的lineData和rateData
-            const lineData = [];
+            const lineData = [3,52,1270,677,999,2321,20,41,75,0,39,166,
+                156,32,393,0,398,86,30,366,704,
+                540,1083,437,2659,149,478,
+                281,159,315,1495];
             const rateData = [];
             
-            for (let index = 0; index < category.length; index++) {
-                const lineNum = 50 + barData[index]; // 固定公式计算
-                lineData.push(lineNum);
-                const rate = barData[index] / lineNum;
-                rateData.push((rate * 100).toFixed(0));
-            }
+            
             
             return {
                 success: true,
