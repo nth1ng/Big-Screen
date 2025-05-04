@@ -5,10 +5,10 @@
   >
     <!-- 侧边栏内容 -->
     <nav class="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/data-upload">data-upload</router-link>
-      <router-link to="/data-analysis">data-analysis</router-link>
-      <router-link to="/prediction-result">prediction-result</router-link>
+      <router-link to="/">主页</router-link>
+      <router-link to="/data-upload">数据加载</router-link>
+      <router-link to="/data-analysis">数据分析</router-link>
+      <router-link to="/prediction-result">在线预测</router-link>
       <router-link to="/about">About</router-link>
     </nav>
   </aside>
