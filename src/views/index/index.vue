@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ItemWrap from "@/components/item-wrap";
 import LeftCenter from "./left-center.vue";
-import LeftBottom from "./left-bottom.vue";
+import DeltaVChart from "./delta-v-chart.vue";
 import CenterMap from "./center-map.vue";
 import CenterBottom from "./center-bottom.vue";
 import RightCenter from "./right-center.vue";
@@ -20,10 +20,10 @@ import RightBottom from "./right-bottom.vue";
       </ItemWrap>
       <ItemWrap
           class="contetn_left-bottom contetn_lr-item"
-          title="光伏发电装机情况"
+          title="2019到2024年光伏发电新增装机量"
           style="padding: 0 10px 16px 10px"
       >
-        <LeftBottom />
+        <DeltaVChart />
       </ItemWrap>
     </div>
     <div class="contetn_center">
